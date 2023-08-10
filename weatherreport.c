@@ -31,6 +31,7 @@ void testHighPrecipitation()
     // strengthen the assert to expose the bug
     // (function returns Sunny day, it should predict rain)
     assert(strlen(weather) > 0);
+    assert(strstr(weather, "Alert, Stormy with heavy rain") != NULL);
 }
 
 int main() {
