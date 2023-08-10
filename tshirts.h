@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
+void tshirtssize(void);
+
 char size(int cms) {
     char sizeName = '\0';
     if(cms < 38) {
