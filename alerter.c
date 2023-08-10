@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <assert.h>
-
-int alertFailureCount = 0;
+#include "alerter.h"
 
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
