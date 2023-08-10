@@ -1,18 +1,4 @@
-#include <stdio.h>
-#include <assert.h>
-#include <string.h>
-
-struct SensorData {
-    double temperatureInC;
-    int precipitation;
-    int humidity;
-    int windSpeedKMPH;
-};
-
-struct SensorData sensorStub() {
-    struct SensorData readings = {72, 70, 26, 52};
-    return readings;
-}
+#include "weatherreport.h"
 
 const char* report(struct SensorData (*sensorReader)()) {
     struct SensorData readings = sensorReader();
@@ -45,6 +31,7 @@ void testHighPrecipitation()
     // strengthen the assert to expose the bug
     // (function returns Sunny day, it should predict rain)
     assert(strlen(weather) > 0);
+    assert(strstr(weather, "Alert, Stormy with heavy rain") != NULL);
 }
 
 int main() {
